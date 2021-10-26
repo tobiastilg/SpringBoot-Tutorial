@@ -9,4 +9,13 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Long>{
+
+    /**
+       Eine Methode wie "findByDepartmentName" stellt unser JpaRepository nicht standardmäßig bereit,
+       deshalb muss eine neue Methode geschrieben werden.
+       Implementiert wird sie, bei richtiger "Name-Convention" (Syntax) durch JPA aber automatisch.
+     */
+    public Department findByDepartmentName(String departmentName);
+
+    public Department findByDepartmentNameIgnoreCase(String departmentName);
 }
