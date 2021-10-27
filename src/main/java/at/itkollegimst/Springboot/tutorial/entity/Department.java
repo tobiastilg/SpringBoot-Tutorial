@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 @Data //Lombok (es gibt auch @-Notations für zB Getter, falls man nur diese benötigen würde)
 @NoArgsConstructor //DefaultConstructor
 @AllArgsConstructor //Konstruktor mit allen Datenfeldern
-@Builder //entire Builder Pattern (laut Video momentan nicht wichtig zu verstehen)
+@Builder //entire Builder Pattern (benutzt beim Testing - unterschiedliche Constructors, benutzt zum Mocking)
 public class Department {
 
     @Id
