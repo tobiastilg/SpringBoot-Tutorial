@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>at.itkollegimst</groupId>
 	<artifactId>Spring-boot-tutorial</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>Spring-boot-tutorial</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -67,6 +67,12 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!-- Actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -87,6 +93,13 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+
+			<!-- Maven Resources (to build JAR File) -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
 			</plugin>
 
 		</plugins>

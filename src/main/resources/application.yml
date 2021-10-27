@@ -21,6 +21,12 @@ spring:
 welcome:
   message: Welcome to Spring Boot!
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 ---
 
 spring:
