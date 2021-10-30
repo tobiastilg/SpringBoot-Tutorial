@@ -40,8 +40,8 @@ Ein `@RequestMapping` kann eine Methode, bei Aufruf des gewünschten Values (im 
 ```java
 @RequestMapping(value = "/", method = RequestMethod.GET)
 public String helloWorld() {
-    return "Welcome to Spring Boot!";
-}
+        return "Welcome to Spring Boot!";
+        }
 ```
 
 Anstatt aber `@RequestMapping` zu verwenden kann die Methode direkt in der Annotation festgelegt werden.
@@ -88,7 +88,7 @@ _MVC: Controller schickt das Model an den View_
 
 _CQRS: Command-Query-Responsibility-Segregation_
 
-Über das Repository greifen wir auf die Informationen in der Datenbank zu. Über die JPA Schnittstelle können die Daten ausgelesen werden. Weiters stellt uns das JpaRepository, CRUD-Operationen (über die ID) standardmäßig zur Verfügung. Sollte es für eine Funktion keine Default-Methode geben, so kann mit richtigem Syntax (keyword) automatisch die gesuchte Funktion implementiert werden. Beispielsweise: 
+Über das Repository greifen wir auf die Informationen in der Datenbank zu. Über die JPA Schnittstelle können die Daten ausgelesen werden. Weiters stellt uns das JpaRepository, CRUD-Operationen (über die ID) standardmäßig zur Verfügung. Sollte es für eine Funktion keine Default-Methode geben, so kann mit richtigem Syntax (keyword) automatisch die gesuchte Funktion implementiert werden. Beispielsweise:
 
 ```java
 public Department findByDepartmentNameIgnoreCase(String departmentName);
@@ -117,13 +117,13 @@ Getter, Setter, der Konstruktor usw. einer Klasse sind schnell erstellt und werd
 ## Exception Handeling
 
 Um bei fehlerhaften Anfragen nicht einen unübersichtlichen Errorlog lesen zu müssen, können einfache Exceptions geworften werden.
-Um die einzelnen Exceptions nicht manuell, beispielsweise im Controller, behandeln zu müssen, kann der `ResponseEntityExceptionHandler` verwendet werden. 
+Um die einzelnen Exceptions nicht manuell, beispielsweise im Controller, behandeln zu müssen, kann der `ResponseEntityExceptionHandler` verwendet werden.
 
-Der erstelle `RestResponseEntityExceptionHandler` erbt von diesem und ist unsere Anprechstation bei Exceptions. In unserem Servicelayer (Geschäftslogik) wird bei einer fehlerhaften Ausführung eine Exception geworfen. Diese muss, wie bereits erwähnt, nicht von einem behandelt werden, das Sping Boot auch hierfür eine effizienter Variate bereitstellt.
+Der erstelle `RestResponseEntityExceptionHandler` erbt von diesem und ist die Anprechstation bei Exceptions. In dem Servicelayer (Geschäftslogik) wird bei einer fehlerhaften Ausführung eine Exception geworfen. Diese muss, wie bereits erwähnt, nicht von einem behandelt werden, da Sping Boot auch hierfür eine effizienter Variate bereitstellt.
 
-Mit der `@ControllerAdvice` Notation für eine Klasse, werden alle in Controller geworfenen Exceptions, an diese Klasse weitergeleitet um dort behandelt zu werden. Der sogenannte `ExceptionHandler` hält dann für jede Exception eine Methode, in der diese Exception behandelt wird. Die Methoden geben dann 
+Mit der `@ControllerAdvice` Notation für eine Klasse, werden alle in Controller geworfenen Exceptions, an diese Klasse weitergeleitet um dort behandelt zu werden. Der sogenannte `ExceptionHandler` hält dann für jede Exception eine Methode, in der diese Exception behandelt wird.
 
-Im folgenden Beispiel wurde eine Domänen-Klasse `ErrorMessage` ersetllt die dann als ResponseObject bzw. ResponseEntity zurückgegeben wird. So können in Spring Boot Exception sauber behandelt werden.
+Im folgenden Beispiel wurde eine Domänen-Klasse `ErrorMessage` erstellt, die dann als ResponseObject bzw. ResponseEntity zurückgegeben wird. So können in Spring Boot Exception sauber behandelt werden.
 
 ```java
 @ControllerAdvice
@@ -155,7 +155,7 @@ spring.jpa.show-sql: true
 
 ## Unit Testing
 
-Mithilfe von unterschiedlichen Libaries, wie JUnit, können Tests in jedem Layer durchgeführt werden. Wird aber beipsielsweise ein Controller getestet, so ist seine Funktionalität vom Servicelayer abhängig. `Mocking` bewirkt, dass, unabhängig vom Servicelayer, direkt das gewünschte Ergebnis an den Controller geliefert wird. Es sollen auch beim testen des Repositorys keine Daten gespeichert, geändert oder gelöscht werden. Auch hierzu werden die Daten `gemockt`.
+Mithilfe von unterschiedlichen Libaries, wie JUnit, können Tests in jedem Layer durchgeführt werden. Wird aber beipsielsweise ein Controller getestet, so ist seine Funktionalität vom Servicelayer abhängig. `Mocking` bewirkt, dass, unabhängig vom Servicelayer, direkt das gewünschte Ergebnis an den Controller geliefert wird. Es sollen auch beim Testen des Repositorys keine Daten gespeichert, geändert oder gelöscht werden. Auch hierzu werden die Daten `gemockt`.
 Mit IntelliJ kann man automatisch Testklassen erzeugen lassen, die dann implementiert werden können.
 
 Es gibt unterschiedliche Vorgehensweisen den Service-, Controller- und Repositorylayer zu testen. Genauere Beschreibung siehe Kommentare im Programm.
@@ -178,7 +178,7 @@ Durch Maven, lässt sich mit einem Befehl eine ausführbare JAR File erzeugen. M
 mvn clean install
 ```
 
-Ausführen lässt sich die Datei dann zB ganz einfach über den Terminal. Wenn man unterschiedliche Profile angelegt hat, kann die JAR Datei mit einem zusätzlichen Attribut (`--spring.profiles.active=profile`) die Applikation mit dem jeweiligen Profil ausführen. Gibt man kein Profil an, so wird das in der config File aktive (zB `active: dev`) Profil, zum Ausführen verwendet. 
+Ausführen lässt sich die Datei dann zB ganz einfach über den Terminal. Wenn man unterschiedliche Profile angelegt hat, kann die JAR Datei mit einem zusätzlichen Attribut (`--spring.profiles.active=profile`) die Applikation mit dem jeweiligen Profil ausführen. Gibt man kein Profil an, so wird das in der config File aktive (zB `active: dev`) Profil, zum Ausführen verwendet.
 
 ```
 java -jar .\Spring-boot-tutorial-1.0.0.jar --spring.profiles.active=profile
