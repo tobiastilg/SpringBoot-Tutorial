@@ -30,4 +30,11 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
     }
+
+    @ExceptionHandler(EmployeeNotFoundException.class)
+    public ResponseEntity<ErrorMessage> employeeNotFoundException(EmployeeNotFoundException exception,
+                                                                  WebRequest request) {
+        ErrorMessage message = new ErrorMessage(HttpStatus.NOT_FOUND, exception.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
+    }
 }
