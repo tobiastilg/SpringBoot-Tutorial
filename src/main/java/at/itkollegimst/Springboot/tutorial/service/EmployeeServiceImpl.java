@@ -39,7 +39,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public List<EmployeeView> fetchEmployeeList() {
+    public List<EmployeeView> fetchEmployeeListView() {
         List<Employee> employeeList = employeeRepository.findAll();
         List<EmployeeView> employeeViewList = new ArrayList<>();
 
@@ -56,6 +56,11 @@ public class EmployeeServiceImpl implements EmployeeService{
         }
 
         return employeeViewList;
+    }
+
+    @Override
+    public List<Employee> fetchEmployeeList() {
+        return employeeRepository.findAll();
     }
 
     @Override

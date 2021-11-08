@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot Tutorial</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container text-center">
+    <h1 class="mt-3">Spring Boot Tutorial</h1>
+    <div class="row mt-3">
+        <a class="h3 col-sm-6" th:href="@{/thyemployees}">Manage Employees</a>
+        <a class="h3 col-sm-6" th:href="@{/thydepartments}">Manage Departments</a>
+    </div>
+</div>
+</body>
+</html>

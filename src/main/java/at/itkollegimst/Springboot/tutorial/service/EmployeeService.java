@@ -9,7 +9,8 @@ import java.util.List;
 
 public interface EmployeeService {
     Employee saveEmployee(EmployeeDTO employeeDto);
-    List<EmployeeView> fetchEmployeeList();
+    List<EmployeeView> fetchEmployeeListView();
+    List<Employee> fetchEmployeeList();
     EmployeeView fetchEmployeeById(Long employeeId) throws EmployeeNotFoundException;
     void deleteEmployeeById(Long employeeId);
     EmployeeView updateEmployee(Long employeeId, EmployeeDTO employeeDTO);

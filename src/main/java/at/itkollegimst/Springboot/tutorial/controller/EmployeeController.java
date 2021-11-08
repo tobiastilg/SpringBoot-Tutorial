@@ -1,6 +1,5 @@
 package at.itkollegimst.Springboot.tutorial.controller;
 
-import at.itkollegimst.Springboot.tutorial.entity.Department;
 import at.itkollegimst.Springboot.tutorial.entity.Employee;
 import at.itkollegimst.Springboot.tutorial.entity.EmployeeDTO;
 import at.itkollegimst.Springboot.tutorial.entity.EmployeeView;
@@ -24,7 +23,7 @@ public class EmployeeController {
 
     @GetMapping("/employees")
     public List<EmployeeView> fetchEmployeeList() {
-        return employeeService.fetchEmployeeList();
+        return employeeService.fetchEmployeeListView();
     }
 
     @GetMapping("/employees/{id}")
