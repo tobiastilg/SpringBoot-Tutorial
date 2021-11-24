@@ -20,11 +20,11 @@ Vollständige Spring Boot Demo-Applikation (Vertiefung)
 
 ## Spring Boot
 
-__Spring__ ist ein sehr umfangreichers Java Framework. Wichtig ist im vorhinen eine gute Konfiguratiuon der Applikation um möglichst effizient ein Programm zu entwickeln. Deshalb kann __Spring Boot__ verwendet werden, das wie eine Extension für das Spring Framework ist (selbes Framework!) und einem eine menge Konfigurationsarbeit abnimmt.
+__Spring__ ist ein sehr umfangreichers Java Framework. Wichtig ist im vorhinein eine gute Konfiguration der Applikation, um möglichst effizient ein Programm zu entwickeln. Deshalb kann __Spring Boot__ verwendet werden, das wie eine Extension für das Spring Framework ist (selbes Framework!) und einem eine menge Konfigurationsarbeit abnimmt.
 
 __Dependencys__ sind in diesem Fall der zentrale Konfigurationspunkt. Es gibt gewisse Starter Templates (zB JPA Template), die dann alle benötigten Dependencies für die Applikation miteinbeziehen (es können jederzeit weitere hinzugefügt werden).
 
-Die __Autoconfiguration__ ist ein weiterer Vorteil von Spring Boot. Die Konfigurationenh von Dependencies und Libraries wird automatisch von dem Framework übernomen.
+Die __Autoconfiguration__ ist ein weiterer Vorteil von Spring Boot. Die Konfigurationen von Dependencies und Libraries werden automatisch von dem Framework übernommen.
 
 Unter __Dependency Injection__ versteht man das Einbringen von Abhängigkeiten, was soviel bedeutet, das beispielsweise ein Objekt bei der Initialisierung ein anderes Objekt benötigt. Das benötigte Objekt wird aber nicht von einem selbst (Schlüsselwort `new`) erzeugt, sondern ist irgendwo hinterlegt.
 Spring Boot kann einem diesen Vorgang komplett abnehmen, damit man nur mehr das gewünschte Objekt verwenden muss. Bei großen Programmen mit vielen Klassen ist dieser Vorgang essenziell um effizient arbeiten zu können.
