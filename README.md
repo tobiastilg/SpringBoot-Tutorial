@@ -20,14 +20,14 @@ Vollständige Spring Boot Demo-Applikation (Vertiefung)
 
 ## Spring Boot
 
-__Spring__ ist ein sehr umfangreichers Java Framework. Wichtig ist im vorhinein eine gute Konfiguration der Applikation, um möglichst effizient ein Programm zu entwickeln. Deshalb kann __Spring Boot__ verwendet werden, das wie eine Extension für das Spring Framework ist (selbes Framework!) und einem eine menge Konfigurationsarbeit abnimmt.
+__Spring__ ist ein sehr umfangreichers Java Framework. Wichtig ist im vorhinein eine gute Konfiguration der Applikation, um möglichst effizient ein Programm zu entwickeln. Deshalb kann __Spring Boot__ verwendet werden, das wie eine Extension für das Spring Framework ist (selbes Framework!) und einem eine Menge Konfigurationsarbeit abnimmt.
 
 __Dependencys__ sind in diesem Fall der zentrale Konfigurationspunkt. Es gibt gewisse Starter Templates (zB JPA Template), die dann alle benötigten Dependencies für die Applikation miteinbeziehen (es können jederzeit weitere hinzugefügt werden).
 
 Die __Autoconfiguration__ ist ein weiterer Vorteil von Spring Boot. Die Konfigurationen von Dependencies und Libraries werden automatisch von dem Framework übernommen.
 
-Unter __Dependency Injection__ versteht man das Einbringen von Abhängigkeiten, was soviel bedeutet, das beispielsweise ein Objekt bei der Initialisierung ein anderes Objekt benötigt. Das benötigte Objekt wird aber nicht von einem selbst (Schlüsselwort `new`) erzeugt, sondern ist irgendwo hinterlegt.
-Spring Boot kann einem diesen Vorgang komplett abnehmen, damit man nur mehr das gewünschte Objekt verwenden muss. Bei großen Programmen mit vielen Klassen ist dieser Vorgang essenziell um effizient arbeiten zu können.
+Unter __Dependency Injection__ versteht man das Einbringen von Abhängigkeiten, was so viel bedeutet, wie beispielsweise ein Objekt bei der Initialisierung ein anderes Objekt benötigt. Das benötigte Objekt wird aber nicht von einem selbst (Schlüsselwort `new`) erzeugt, sondern ist irgendwo hinterlegt.
+Spring Boot kann einem diesen Vorgang komplett abnehmen, damit man nur mehr das gewünschte Objekt verwenden muss. Bei großen Programmen mit vielen Klassen ist dieser Vorgang essenziell, um effizient arbeiten zu können.
 
 start.spring.io hilft uns ein Spring Boot Project zu einzurichten und zu konfigurieren (ähnlich wie IntelliJ). Da dieses Beispiel auf einem Maven Projekt basiert, dann auch über maven das Projekt gestartet werden (über das Spring Boot Plugin: `mvn spring-boot:run`)
 
@@ -35,7 +35,7 @@ start.spring.io hilft uns ein Spring Boot Project zu einzurichten und zu konfigu
 
 Mithilfe von `@RestController` kann ein API Controller erstellt werden. Jeder Controller ist außerdem ein `@Component` und daher innerhalb des SpringBoot Containers (Klasse steht immer zur Verfügung).
 
-Ein `@RequestMapping` kann eine Methode, bei Aufruf des gewünschten Values (im folgenden Fall: "localhost:8080/") über die gewünschte HTTP-Methode (zB GET, Post) aufrufen.
+Ein `@RequestMapping` kann eine Methode, bei Aufruf des gewünschten Values (im folgenden Fall: "localhost:8080/"), über die gewünschte HTTP-Methode (zB GET, Post) aufrufen.
 
 ```java
 @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -61,7 +61,7 @@ Zur schnelleren und einfacheren Entwicklung können die Spring Boot Dev-Tools ve
 
 ## H2
 
-H2 ist eine in-memory Datenbank (Datenbanksystem das den Arbeitsspeicher des Computers nutzt) die oft zu Testzwecken verwendet wird. Die Einstellungen dazu können in der `application.properties` File festgelegt werden, nachdem die Dependency eingefügt wurde.
+H2 ist eine in-memory Datenbank (Datenbanksystem das den Arbeitsspeicher des Computers nutzt), die oft zu Testzwecken verwendet wird. Die Einstellungen dazu können in der `application.properties` File festgelegt werden, nachdem die Dependency eingefügt wurde.
 
 ```properties
 spring.h2.console.enabled=true
@@ -121,7 +121,7 @@ Um die einzelnen Exceptions nicht manuell, beispielsweise im Controller, behande
 
 Der erstelle `RestResponseEntityExceptionHandler` erbt von diesem und ist die Anprechstation bei Exceptions. In dem Servicelayer (Geschäftslogik) wird bei einer fehlerhaften Ausführung eine Exception geworfen. Diese muss, wie bereits erwähnt, nicht von einem behandelt werden, da Sping Boot auch hierfür eine effizienter Variate bereitstellt.
 
-Mit der `@ControllerAdvice` Notation für eine Klasse, werden alle in Controller geworfenen Exceptions, an diese Klasse weitergeleitet um dort behandelt zu werden. Der sogenannte `ExceptionHandler` hält dann für jede Exception eine Methode, in der diese Exception behandelt wird.
+Mit der `@ControllerAdvice` Notation für eine Klasse, werden alle in Controller geworfenen Exceptions, an diese Klasse weitergeleitet, um dort behandelt zu werden. Der sogenannte `ExceptionHandler` hält dann für jede Exception eine Methode, in der diese Exception behandelt wird.
 
 Im folgenden Beispiel wurde eine Domänen-Klasse `ErrorMessage` erstellt, die dann als ResponseObject bzw. ResponseEntity zurückgegeben wird. So können in Spring Boot Exception sauber behandelt werden.
 
@@ -186,6 +186,6 @@ java -jar .\Spring-boot-tutorial-1.0.0.jar --spring.profiles.active=profile
 
 ## Actuator
 
-Mithilfe des Actuators (Dependency) können über den URL Pfad `/ancunator`, Abfragen zur Applikation gemacht werden. In der config File können zusätzliche "endpoints" hinzugefügt werden, damit mehr Informationen einsehbar sind.
+Mithilfe des Actuators (Dependency) können über den URL-Pfad `/ancunator`, Abfragen zur Applikation gemacht werden. In der config File können zusätzliche "endpoints" hinzugefügt werden, damit mehr Informationen einsehbar sind.
 
 Eigene Endpoints lassen sich mit der `@Endpoint` Notation erstellen (siehe /actuator/features).
